@@ -1,4 +1,6 @@
-
+#![forbid(unsafe_code)]
+mod statement;
+mod dialects;
 
 #[cfg(test)]
 mod tests {
