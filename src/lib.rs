@@ -1,6 +1,6 @@
 #![forbid(unsafe_code)]
-mod statement;
-mod dialects;
+pub mod query;
+pub mod dialects;
 
 #[cfg(test)]
 mod tests {

@@ -1,18 +1,25 @@
 use crate::dialects::Dialects;
 
+#[derive(Debug)]
 pub struct Expression {}
 
 /// Clause implementation
+#[derive(Debug)]
 pub struct Clause {
     expression: Option<Expression>,
 }
 
 /// Statement implementation
+#[derive(Debug)]
 pub struct Statement {
     /// Specify dialect for conversion
-    dialect: Dialects,
+    pub dialect: Dialects,
     /// Array of clauses completing a Statement
-    clauses: Vec<Clause>,
+    pub clauses: Vec<Clause>,
     /// Table name
-    table_name: String,
+    pub table_name: String,
+}
+
+pub trait StatementTrait {
+
 }
