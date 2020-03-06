@@ -9,4 +9,6 @@ edition = "2018"
 [[example]]
 name = "mysql"
 
+[build-dependencies]
+
 [dependencies]
