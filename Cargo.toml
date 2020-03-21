@@ -11,4 +11,7 @@ name = "mysql"
 
 [build-dependencies]
 
+[dev-dependencies]
+
 [dependencies]
+typed-builder = "0.5.1"

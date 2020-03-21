@@ -39,10 +39,11 @@ impl ClauseBuilder {
     }
     /// Select shortcut
     pub fn select(table: String, columns: Option<Vec<String>>) -> ClauseBuilder {
-        let mut expression = String::from("");
-        for column in columns.unwrap_or(vec![]) {
-            expression = format!("{:?} {:?}", expression, column);
+        let mut expression = String::from("select");
+        for column in columns.unwrap_or(vec![String::from("*")]) {
+            expression = format!("{} {}", expression, column);
         }
+        expression = format!("{} from {}", expression, table);
         ClauseBuilder {
             table,
             expression,
@@ -53,7 +54,7 @@ impl ClauseBuilder {
     pub fn build(self) -> Clause {
         Clause {
             table: self.table,
-            expression: self.expression
+            expression: self.expression,
         }
     }
 }
